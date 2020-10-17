@@ -61,6 +61,7 @@ class Form extends React.Component {
 
     return (
       <div className="container">
+        <h2>New Project</h2>
         <div className="row">
           <div className="col main-form form-inline">
             <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
@@ -94,7 +95,7 @@ class Form extends React.Component {
           </div>
           <div className='col preview'>
             <table className="table">
-              <thead className="thead-dark">
+              <thead>
                 <tr>
                   <th>PO Number</th>
                   <th>Representative</th>

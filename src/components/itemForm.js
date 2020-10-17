@@ -61,6 +61,7 @@ class ItemForm extends React.Component {
   render() {
     return (
       <div className="container">
+        <h2>Add Items</h2>
         <div className="row">
           <div className="col main-form item-form form-inline">
             <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
