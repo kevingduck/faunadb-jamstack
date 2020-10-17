@@ -27,7 +27,7 @@
 }
 
 .main-form {
-  float:left;
+  float: left;
 }
 
 .main-form input {
@@ -36,26 +36,41 @@
 
 .main-form * {
   text-align: left;
-  margin: 10px;
+  margin: 5px;
   list-style: none;
   /* width: 500px; */
   /* clear:both; */
 }
 
-.main-form button {
+.main-form button,
+.create-project button {
+  float:right;
+  margin: 20px;
   background: green;
   color: white;
   border-radius: 5px;
 }
 
+.main-form li,
 .item-form li {
- float:left;
+  float: left;
 }
 
 .item-form {
-  background:lightgray;
+  background: lightgray;
 }
 
 table * {
   padding: 5px;
+}
+
+
+.preview {
+  padding: 5px;
+  margin:50px;
+}
+
+.preview table {
+  padding: 5px;
+  width:80%;
 }

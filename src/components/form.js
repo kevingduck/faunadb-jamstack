@@ -1,19 +1,20 @@
 import React from 'react';
-import ItemForm from './itemForm';
-import ProjectDetail from './projectDetail';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       po_number: '',
       representative: '',
       customer_name: '',
       shipping_address: '',
       email_address: '',
       invoice_address: '',
-      billing_percentage: ''
+      items: {
+        item_number: '',
+      }
     };
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.objectifyForm = this.objectifyForm.bind(this);
   }
@@ -27,11 +28,8 @@ class Form extends React.Component {
     return returnArray;
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    // const data = this.objectifyForm(form);
-    this.setState({[event.target.name]: event.target.value}, () => {
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value }, () => {
       const {
         po_number,
         representative,
@@ -39,26 +37,32 @@ class Form extends React.Component {
         shipping_address,
         email_address,
         invoice_address,
-        billing_percentage 
       } = this.state;
-      // this.setState(); 
     });
+  }
 
-    // if (window.confirm("Ready to save?" + JSON.stringify(data))) {
-    //   fetch('./.netlify/functions/projects', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //   });
-    //   event.target.reset();
-    //   console.log('created' + JSON.stringify(data));
-    // };
+  handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = this.objectifyForm(form);
+
+    if (window.confirm("Ready to save?" + JSON.stringify(data))) {
+      fetch('./.netlify/functions/projects', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
+      console.log('created' + JSON.stringify(data));
+    };
+      event.target.reset();
   }
 
   render() {
+    const data = [this.state];
+
     return (
       <div>
         <div className="main-form">
-          <form onChange={this.handleSubmit}>
+          <form onChange={this.handleChange}  onSubmit={this.handleSubmit}>
             <ul>
               <li>
                 <label htmlFor="po_number">PO Number:</label>
@@ -84,35 +88,37 @@ class Form extends React.Component {
                 <label htmlFor="invoice_address">Paper Invoice Address:</label>
                 <input id="invoice_address" name="invoice_address" type="text" />
               </li>
-              <li>
-                <label htmlFor="billing_percentage">Billing Percentage:</label>
-                <input id="billing_percentage" name="billing_percentage" type="text" defaultValue="100" />
-              </li>
-              <li>
-                <button>Create Project</button>
-              </li>
             </ul>
+            <button type="submit">Save Project</button>
+
           </form>
         </div>
 
-        <div className='main-form'>
-          project: {this.state.po_number} <br/>
-          rep: {this.state.representative} <br/>
-          customer: {this.state.customer_name} <br/>
-          shipping: {this.state.shipping_address} <br/>
-          email address: {this.state.email_address} <br/>
-          invoice address: {this.state.invoice_address} <br/>
-          billing %: {this.state.billing_percentage} <br/>
-          {/* {this.state.po_number.map((name, index) => (
-            <li key={index}>
-              {name}
-            </li>
-          ))} */}
-      </div>
+        <div className='preview'>
+          <table>
+            <tbody>
+              <tr>
+                <th>PO Number</th>
+                <th>Representative</th>
+                <th>Customer Name</th>
+                <th>Shipping</th>
+                <th>Email</th>
+                <th>Paper Invoice Address</th>
+              </tr>
+              <tr>
+                <td>{this.state.po_number}</td>
+                <td>{this.state.representative}</td>
+                <td>{this.state.customer_name}</td>
+                <td>{this.state.shipping_address}</td>
+                <td>{this.state.email_address}</td>
+                <td>{this.state.invoice_address}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
 }
-
 
 export default Form

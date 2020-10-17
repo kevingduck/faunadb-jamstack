@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
-import Form from './components/form.js';
 import Header from './components/header.js';
-// import ItemForm from './components/itemForm';
-import ProjectDetail from './components/projectDetail';
+import CreateProject from './components/createProject.js';
 
 class App extends React.Component {
 
@@ -11,11 +9,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header></Header>
-        <div className="full-form">
-          <div>
-            <Form></Form>
-          </div>
-        </div>
+        <CreateProject></CreateProject>
       </div>
     );
   }
