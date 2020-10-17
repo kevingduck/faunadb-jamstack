@@ -34,28 +34,32 @@ class ProjectDetail extends React.Component {
 
   render() {
     return (
-        <div className="main-form">
-        <table>
+      <div>
+        <table className="table">
+          <thead>
             <tr>
-                <th>PO Number</th>
-                <th>Representative </th>
-                <th>Customer </th>
-                <th>Shipping Address </th>
-                <th>Email Address </th>
-                <th>Paper Invoice Address </th>
-                <th>Billing % </th>
+              <th>PO Number</th>
+              <th>Representative </th>
+              <th>Customer </th>
+              <th>Shipping Address </th>
+              <th>Email Address </th>
+              <th>Paper Invoice Address </th>
+              <th>Billing % </th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-                <td>test po number</td>
-                <td>test rep</td>
-                <td>test customer</td>
-                <td>test shipping</td>
-                <td>test email</td>
-                <td>test paper</td>
-                <td>test billing</td>
+              <td>test po number</td>
+              <td>test rep</td>
+              <td>test customer</td>
+              <td>test shipping</td>
+              <td>test email</td>
+              <td>test paper</td>
+              <td>test billing</td>
             </tr>
+          </tbody>
         </table>
-    </div>
+      </div>
     );
   }
 }

@@ -5,7 +5,7 @@ class Header extends React.Component {
         return (
             <div>
                 <header className="App-header">
-                    <h1>Tracker</h1>
+                    <h1>Project Tracker  🌎🌎  Converged Networks </h1>
                 </header>
             </div>
         )

@@ -22,30 +22,12 @@
   color: #61dafb;
 }
 
-.full-form {
-  display: flex;
-}
-
-.main-form {
-  float: left;
-}
-
-.main-form input {
-  display: block;
-}
-
 .main-form * {
-  text-align: left;
-  margin: 5px;
   list-style: none;
-  /* width: 500px; */
-  /* clear:both; */
 }
 
 .main-form button,
 .create-project button {
-  float:right;
-  margin: 20px;
   background: green;
   color: white;
   border-radius: 5px;
@@ -56,21 +38,7 @@
   float: left;
 }
 
-.item-form {
-  background: lightgray;
-}
-
-table * {
-  padding: 5px;
-}
-
-
 .preview {
   padding: 5px;
-  margin:50px;
-}
-
-.preview table {
-  padding: 5px;
-  width:80%;
+  margin:10px;
 }
