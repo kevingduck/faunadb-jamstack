@@ -73,7 +73,6 @@ class ItemForm extends React.Component {
               <button>Add Item to Project</button>
             </li>
           </ul>
-
         </form>
       </div>
     );

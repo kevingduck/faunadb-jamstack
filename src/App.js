@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Form from './components/form.js';
 import Header from './components/header.js';
-import ItemForm from './components/itemForm';
+// import ItemForm from './components/itemForm';
 import ProjectDetail from './components/projectDetail';
 
 class App extends React.Component {
@@ -14,12 +14,6 @@ class App extends React.Component {
         <div className="full-form">
           <div>
             <Form></Form>
-          </div>
-          <div>
-            <ItemForm></ItemForm>
-          </div>
-          <div>
-            <ProjectDetail></ProjectDetail>
           </div>
         </div>
       </div>

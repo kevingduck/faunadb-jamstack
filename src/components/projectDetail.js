@@ -37,7 +37,7 @@ class ProjectDetail extends React.Component {
         <div className="main-form">
         <table>
             <tr>
-                <th>Project PO Number</th>
+                <th>PO Number</th>
                 <th>Representative </th>
                 <th>Customer </th>
                 <th>Shipping Address </th>
@@ -46,7 +46,7 @@ class ProjectDetail extends React.Component {
                 <th>Billing % </th>
             </tr>
             <tr>
-                <td>test po nuimber</td>
+                <td>test po number</td>
                 <td>test rep</td>
                 <td>test customer</td>
                 <td>test shipping</td>

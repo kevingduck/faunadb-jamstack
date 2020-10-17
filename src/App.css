@@ -26,8 +26,8 @@
   display: flex;
 }
 
-.main-form div {
-  display: flex;
+.main-form {
+  float:left;
 }
 
 .main-form input {
